@@ -71,6 +71,9 @@ header {
     color: #A21D1D;
 }
 
+#menu, #menu-check{
+    display: none;
+}
 
 /* Contenido del sitio */
 
@@ -694,7 +697,7 @@ label {
     }
 
     .header-menu a {
-        font-size: 1rem;
+        font-size: 1.4rem;
     }
 
     .main-content {
@@ -802,13 +805,75 @@ label {
     .seccion-fichas-news img {
         padding-left: 15%;
     }
+
+    .header-menu {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        background-color: black;
+        padding-top: 5em;
+        padding-right: 5em;
+        opacity: 0.8;
+        color: red;
+    }
+
+    .header-menu ul a{
+        color: white;
+        background: none;
+        font-size: 0.02em;
+    }
+
+    .header-menu ul, .header-menu li{
+        display: flex;
+        flex-flow: column;
+        font-size: 10em;
+    }
+
+    #menu-check:not(:checked) ~ .header-menu {
+        display: none;
+    }
+
+    #menu-check:checked ~ .header-menu {
+        display: block;
+    }
+
+    #menu {
+        display: block;
+        color: red;
+        background-color: black;
+        font-size: 1.3em;
+        border: 3px solid red;
+        border-radius: 0.3em;
+        position: absolute;
+        right: 0.5em;
+        top: 5em;
+        z-index: 9999;
+    }
+
+    #menu:hover{
+        color: black;
+        background-color: red;
+    }
+
+    #menu-cerrar{
+        display: none;
+    }
+
+    #menu-check:checked ~ label #menu-abrir{
+        display: none;
+    }
+
+    #menu-check:checked ~ label #menu-cerrar{
+        display: block;
+    }
+
+    
+
+
 }
 
 @media (max-width: 640px) {
-
-    .header-menu {
-        flex-flow: column wrap;
-    }
 
     .mensaje {
         margin-left: 20px;
@@ -856,3 +921,5 @@ label {
         height: 210px;
     }
 }
+
+/***********/
