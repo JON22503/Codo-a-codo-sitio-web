@@ -71,6 +71,9 @@ header {
     color: #A21D1D;
 }
 
+#menu, #menu-check{
+    display: none;
+}
 
 /* Contenido del sitio */
 
@@ -95,7 +98,7 @@ main {
 
 .btn-up a {
     text-decoration: none;
-    color: black
+    color: black;
 }
 
 .btn-up {
@@ -104,6 +107,7 @@ main {
     position: fixed;
     right: 40px;
     bottom: 40px;
+    z-index: 100;
 }
 
 
@@ -661,6 +665,14 @@ label {
         height: 520px;
     }
 
+    .secciones article div h1, h3 {
+        text-decoration: underline;
+    }
+
+    .about h3 {
+        text-decoration: none;
+    }
+
     .main-content aside {
         flex-flow: row wrap;
     }
@@ -694,7 +706,7 @@ label {
     }
 
     .header-menu a {
-        font-size: 1rem;
+        font-size: 1.4rem;
     }
 
     .main-content {
@@ -737,6 +749,7 @@ label {
 
     .main-content .secciones article {
         width: auto;
+        margin-left: 15px;
     }
 
     .main-content .secciones article div {
@@ -795,6 +808,14 @@ label {
         margin-left: 15px;
     }
 
+    .div-form {
+        margin-left: 15px;
+    }
+
+    .div-opinion {
+        margin-left: 10px;
+    }
+
     .seccion-fichas img {
         padding-left: 15%;
     }
@@ -802,13 +823,81 @@ label {
     .seccion-fichas-news img {
         padding-left: 15%;
     }
+
+    .header-logo {
+        z-index: 101;
+    }
+
+    .header-menu {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        right: 0;
+        height: 100%;
+        background-color: black;
+        padding-top: 5em;
+        opacity: 0.8;
+        color: red;
+        z-index: 100;
+        overflow-y: hidden;
+    }
+
+    .header-menu ul a{
+        color: white;
+        background: none;
+        font-size: 0.02em;
+    }
+
+    .header-menu li {
+        padding: 40px;
+    }
+
+    .header-menu ul, .header-menu li{
+        display: flex;
+        flex-flow: column;
+        font-size: 10em;
+    }
+
+    #menu-check:not(:checked) ~ .header-menu {
+        display: none;
+    }
+
+    #menu-check:checked ~ .header-menu {
+        display: block;
+    }
+
+    #menu {
+        display: block;
+        color: #A21D1D;
+        background-color: black;
+        font-size: 2em;
+        border: 3px solid #A21D1D;
+        border-radius: 0.3em;
+        position: absolute;
+        right: 0.5em;
+        top: 1.5em;
+        z-index: 9999;
+    }
+
+    #menu:hover{
+        color: black;
+        background-color: #A21D1D;
+    }
+
+    #menu-cerrar{
+        display: none;
+    }
+
+    #menu-check:checked ~ label #menu-abrir{
+        display: none;
+    }
+
+    #menu-check:checked ~ label #menu-cerrar{
+        display: block;
+    }
 }
 
 @media (max-width: 640px) {
-
-    .header-menu {
-        flex-flow: column wrap;
-    }
 
     .mensaje {
         margin-left: 20px;
@@ -855,4 +944,12 @@ label {
     .juegos article iframe { 
         height: 210px;
     }
+
+    #menu {
+        position: relative;
+        top: -20px;
+        right: -200px;
+    }
 }
+
+/***********/

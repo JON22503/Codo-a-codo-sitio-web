@@ -17,6 +17,11 @@
         <div class="header-logo">
             <a href="index.html"><img src="img/logo-360p.png" alt="Logo Digital Fun"></a>
         </div>
+        <input type="checkbox" id="menu-check">
+            <label id="menu" for="menu-check">
+                <span id="menu-abrir">&#9776;</span>
+                <span id="menu-cerrar">X</span>
+        </label>
         <nav class="header-menu">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
@@ -226,6 +231,16 @@
     </main>
     <script src="js/api-noticias.js"></script>
     <script src="https://kit.fontawesome.com/9289e55550.js" crossorigin="anonymous"></script>
+    <script>
+        document.getElementById("menu-check").addEventListener("change", function () {
+            if (document.getElementById("menu-check").checked == true) {
+                document.documentElement.setAttribute("style", "overflow-y: hidden;");
+
+            } else {
+                document.documentElement.setAttribute("style", "overflow-y: auto;");
+            }
+        });
+    </script>
     <footer>
         <div>
             <p>Digital Fun | © Argentina Codo a Codo 2022</p>
